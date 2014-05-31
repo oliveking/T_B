@@ -1,0 +1,51 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage{setspace}
+\usepackage{latexsym}
+\usepackage{verbatim}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{url}
+% K: check TikZ for drawing your example machines
+\usepackage{tikz}
+\usetikzlibrary{arrows,automata}
+%\usepackage{centernot}
+%\usepackage{fancyvrb}
+%\usepackage{minted}
+
+
+% K: LTL and predicate logic
+\usepackage{sty/fakeltl,sty/folsynt}
+
+\include{template/template}
+\renewcommand{\author}{Xuedong Li\\Supervisor: Kai Engelhardt\\Assessor: Carroll Morgan}
+\renewcommand{\title}{Fairness in Event-B} % K: fixme
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+% K: the following assumes you put your sections into separate files
+% in the directory "section" and named them "00-Acknowledgement",
+% "01-Introduction.tex" etc.
+\setcounter{section}{0}
+\include{section/00-Acknowledgement}
+
+% actual content must be 1.5line-spacing
+\onehalfspacing
+
+
+\include{section/01-Introduction}
+\include{section/02-Background}
+\include{section/03-Fairness-for-Event-B}
+\include{section/04-Results}
+\include{section/05-Conclusion}
+
+% think the bib can be normal line-spacing
+\singlespacing
+
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliographystyle{alpha}
+\bibliography{Main}
+
+\end{document}

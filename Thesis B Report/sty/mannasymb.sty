@@ -1,0 +1,63 @@
+\ProvidesPackage{mannasymb}[1998/05/08 v0.2]
+\RequirePackage{amsmath}
+
+\newcommand{\ke@symb}[1]{%
+  \mathchoice%
+  {\text{\manna\symbol{#1}}}%
+  {\text{\manna\symbol{#1}}}%
+  {\text{\mannas\symbol{#1}}}%
+  {\text{\mannass\symbol{#1}}}}
+
+\let\if@sizeoption\iftrue
+
+\DeclareOption{10pt}{\typeout{Trying mannasymbs in 10pt.}
+  \IfFileExists{zmsy10.600pk}{}{\typeout{Can't find zmsy10.600pk now, better cross fingers!}}
+\newfont{\manna}{zmsy10 scaled 900}
+\newfont{\mannas}{zmsy10 scaled 600}
+\newfont{\mannass}{zmsy10 scaled 450}
+\let\if@sizeoption\iffalse}
+
+\DeclareOption{11pt}{\typeout{Trying mannasymbs in 11pt.}
+  \IfFileExists{zmsy10.600pk}{}{\typeout{Can't find zmsy10.600pk now, better cross fingers!}}
+\newfont{\manna}{zmsy10 scaled 990}
+\newfont{\mannas}{zmsy10 scaled 660}
+\newfont{\mannass}{zmsy10 scaled 495}
+\let\if@sizeoption\iffalse}
+
+\DeclareOption{12pt}{\typeout{Trying mannasymbs in 12pt.}
+  \IfFileExists{zmsy10.600pk}{}{\typeout{Can't find zmsy10.600pk now, better cross fingers!}}
+\newfont{\manna}{zmsy10 scaled 1080}
+\newfont{\mannas}{zmsy10 scaled 720}
+\newfont{\mannass}{zmsy10 scaled 540}
+\let\if@sizeoption\iffalse}
+
+\DeclareOption{17pt}{\typeout{Trying mannasymbs in 17pt.}
+  \IfFileExists{zmsy10.600pk}{}{\typeout{Can't find zmsy10.600pk now, better cross fingers!}}
+\newfont{\manna}{zmsy10 scaled 1530}
+\newfont{\mannas}{zmsy10 scaled 1320}
+\newfont{\mannass}{zmsy10 scaled 765}
+\let\if@sizeoption\iffalse}
+
+\DeclareOption{20pt}{\typeout{Trying mannasymbs in 20pt.}
+  \IfFileExists{zmsy10.600pk}{}{\typeout{Can't find zmsy10.600pk now, better cross fingers!}}
+\newfont{\manna}{zmsy10 scaled 1800}
+\newfont{\mannas}{zmsy10 scaled 1200}
+\newfont{\mannass}{zmsy10 scaled 900}
+\let\if@sizeoption\iffalse}
+
+\DeclareOption{25pt}{\typeout{Trying mannasymbs in 25pt.}
+  \IfFileExists{zmsy10.600pk}{}{\typeout{Can't find zmsy10.600pk now, better cross fingers!}}
+\newfont{\manna}{zmsy10 scaled 2250}
+\newfont{\mannas}{zmsy10 scaled 1500}
+\newfont{\mannass}{zmsy10 scaled 1175}
+\let\if@sizeoption\iffalse}
+
+\DeclareOption{30pt}{\typeout{Trying mannasymbs in 30pt.}
+  \IfFileExists{zmsy10.600pk}{}{\typeout{Can't find zmsy10.600pk now, better cross fingers!}}
+\newfont{\manna}{zmsy10 scaled 2700}
+\newfont{\mannas}{zmsy10 scaled 1800}
+\newfont{\mannass}{zmsy10 scaled 1350}
+\let\if@sizeoption\iffalse}
+
+\ProcessOptions
+\if@sizeoption\typeout{Default kicks in.}\ExecuteOptions{10pt}\fi

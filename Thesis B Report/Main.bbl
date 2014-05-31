@@ -1,0 +1,38 @@
+\begin{thebibliography}{Eng13}
+
+\bibitem[Eng13]{Engelhardt2013}
+Kai Engelhardt.
+\newblock Proving response properties of event-b machines.
+\newblock Lecture notes for COMP2111, accessed at 2013/11/12,
+  \url{http://www.cse.unsw.edu.au/~cs2111/13s1/lec/note09.pdf}, May 2013.
+
+\bibitem[HA11]{HoangAbrial:ICFEM2011}
+Thai~Son Hoang and Jean-Raymond Abrial.
+\newblock Reasoning about liveness properties in {Event-B}.
+\newblock In Shengchao Qin and Zongyan Qiu, editors, {\em Formal Methods and
+  Software Engineering - 13th International Conference on Formal Engineering
+  Methods, ICFEM 2011, Durham, UK, October 26-28, 2011. Proceedings}, volume
+  6991 of {\em LNCS}, pages 456--471. Springer-Verlag, 2011.
+
+\bibitem[MP88]{MannaPnueli:REX1988}
+Zohar Manna and Amir Pnueli.
+\newblock The anchored version of the temporal framework.
+\newblock In J.~W. de~Bakker, W.-P. de~Roever, and G.~Rozenberg, editors, {\em
+  Linear Time, Branching Time and Partial Order in Logics and Models for
+  Concurrency}, volume 354 of {\em LNCS}, pages 201--284. Springer-Verlag,
+  1988.
+
+\bibitem[MP91]{MannaPnueli1991:szym}
+Zohar Manna and Amir Pnueli.
+\newblock Tools and rules for the practicing verifier.
+\newblock In Richard~F. Rashid, editor, {\em Computer Science: A 25th
+  Anniversary Commemorative}, pages 121--156. {ACM} Press and Addison-Wesley
+  Publishing Co., 1991.
+
+\bibitem[MP92]{MannaPnueli92}
+Zohar Manna and Amir Pnueli.
+\newblock {\em The Temporal Logic of Reactive and Concurrent Systems:
+  Specification}.
+\newblock Springer-Verlag, 1992.
+
+\end{thebibliography}

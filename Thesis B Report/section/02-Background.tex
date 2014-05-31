@@ -1,0 +1,27 @@
+
+\section{Background}
+\label{sec:Background}
+
+% K: fixme
+
+\subsection{Event-B}
+Event-B is a formal method for system-level modelling and analysis. Event-B uses set theory as a modelling notation and stepwise refinement to represent systems at different abstraction levels. Between different refinement levels, Event-B uses mathematical proof to justify consistency. \\
+We use machines to describe the dynamic behavior of a model. For a machine M, the variables V are declared in the Variable section. The type of the variables and also the additional constraints I for the variables are declared in the Invariants section. \\
+The possible state changes for the machine is defined by events. For an event E, additional external variables t are introduced in the Parameter section. The preconditions G which enable an event’s execution are given by guards. The actions A implement the detailed changing between pre state and after state. Proofs are required to ensure the after state satisfy the invariants.\\
+Every machine in Event-B must have an event INITIALIZATION ($E_{0}$) to set all the variables as the model start. $E_{0}$ does not have any guards nor parameters and the actions must cover the setup for all the variables.\\
+However, in Event-B, only one event can happen at a time, which means original Event-B does not support concurrent execution.\\
+In the rest parts of the thesis report, we will use following notions:\\
+M : Machine\\
+v : Variables\\
+J : Invariant\\
+For all event i $\in$ I, I is the set of all events\\
+$E_{i}$ : The event i, where $E_{0}$ is the INITIALIZATION event\\
+$g_{i}$: The guard of Event i\\
+$a_{i}$: The action of Event i\\
+\subsection{Temporal Logic}
+
+Temporal logic is a system of rules and symbolism for representing, and reasoning about, propositions qualified in terms of time. With modalities referring to time, linear temporal logic or linear-time temporal logic (LTL) is a modal temporal logic. In LTL, we can encode formulas about the future of paths, one example of this is "one condition will be always true after the system satisfy another condition". Some LTL notations we will use in the rest parts of this thesis report are:\\
+$\Always\phi$	Globally: $\phi$ always happen (hold on the entire subsequent path)\\
+$\Eventually\phi$	Finally: $\phi$ eventually happen (hold somewhere on the subsequent path)\\
+$\Next\phi$	Next: $\phi$ will happen next (hold at next state)\\
+The LTL for a system is defined under the assumption of infinite execution. It does not make any sense for using LTL in a finite execution system (a system will automatic halt after limited executions).\\

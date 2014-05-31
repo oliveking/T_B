@@ -1,0 +1,75 @@
+
+\section{Fairness-for-Event-B}
+\label{sec:Fairness-for-Event-B}
+
+% K: fixme
+
+\subsection{Introduction}
+Fairness is a property of unbounded nondeterminism, which ensure the system fairly take the transactions when they are enabled, to avoid the situation that some transactions are always ignored. For example, a randomize number generator must be able to eventually generate every value within its range. Fairness can't be used on systems with finite executions.
+
+\paragraph{Weak Fairness}
+We say that an event i is weakly fairness (WF) iff it infinitely often disabled or infinitely often taken.
+\begin{center}
+WF(i)$\iff\Always\Eventually\neg{g}_{i}\lor\Always\Eventually{taken}_{i}$ 
+\end{center}
+
+\paragraph{Strong Fairness}
+We say that an event i is strong fairness (SF) iff it eventually disabled forever or infinitely often taken.
+\begin{center}
+SF(i)$\iff\Eventually\Always\neg{g}_{i}\lor\Always\Eventually{taken}_{i}$ 
+\end{center}
+However, by working on the definitions for weak fairness and strong fairness, we can easily find that weak fairness imply strong fairness. Weak fairness is more detailed that strong fairness.  
+\begin{center}
+WF(i)$\Implies$SF(i) 
+\end{center}
+
+\paragraph{Event Merging}
+For some situations we only have the fairness constraints for a set of events instead of fairness constraints for each of them. For example, Peter wants to travel all over the world, once he arrive a new place, he might stay there and spent several days for sightseeing. In this example, assume having an one-day sightseeing is event $E_{sightseeing}$, moving on air is event $E_{air}$ and moving by train is event $E_{train}$. By illustrating an event $E_{travel}$, as a merged event for moving to a new place by whatever mean. The following constraint
+\begin{center}
+WF($travel$) 
+\end{center}
+must be satisfied to ensure he can move from one place to the others rather than spending infinite days sightseeing somewhere without moving.\\
+Since he does have any concern for choosing transportation, it's not necessary to ensure
+\begin{center}
+WF($air$) or WF($train$) 
+\end{center}
+which force him always eventually choose airplane or train.\\
+For this type of constraints, we introduce following rule for merging event:\\
+For event $E_{i}$ and event $E_{j}$, where i,j $\in$ I, the merged event $E_{i\lor{j}}$ satisfy:
+\begin{center}
+$
+\begin{array}{lcl}
+g_{i\lor{j}} & = & g_{i}\lor{g_{j}}\\
+a_{i\lor{j}} & | & a'_{i\lor{j}} \land \\
+             &   & (((g_{i}\land\neg{g_{j}})\Implies (a'_{i\lor{j}} = a_{i}))\\
+             &   & \lor ((\neg{g_{i}}\land{g_{j}})\Implies (a'_{i\lor{j}} = a_{j}))\\
+             &   & \lor (({g_{i}}\land{g_{j}})\Implies (a'_{i\lor{j}} = a_{j}\lor{a_{j}})))
+\end{array}
+$
+\end{center}
+The merged event $E_{j}$ have a disjoint guard of event $E_{i}$ and event $E_{j}$, and $a_{i\lor{j}}$ is the corresponding available action from of event $E_{i}$ and event $E_{j}$, if multiple guards satisfied, the action will be the disjoint of $a_{j}$ and ${a_{j}}$. \\
+Some properties for fairness constraints of merged events are:\\
+Assume i,j $\in$ I, event $E_{i\lor{j}}$ is the merged event from $E_{i}$ and $E_{j}$
+\begin{center} 
+WF(i) $\lor$ WF(j) $\Implies$  WF($i\lor{j}$)\\
+SF(i) $\lor$ SF(j) $\Implies$  SF($i\lor{j}$)
+\end{center}
+\paragraph{Event Splitting}
+In an opposite way, we can also split an event into several mutually exclusive sub-events, by refining them with different mutually exclusive strengthen guards which fullfill the original guard. \\
+For event h where h $\in$ I, event i and event j are splitted events of h iff:
+\begin{center} 
+$g_{i} \lor{g_{j}} = g_{h}$\\
+$g_{i}\land{g_{j}} = \varnothing$\\
+$a_{i} = a_{j} = a_{h}$
+\end{center}
+Note that the fairness constraints the original event hold can't be inherited by any one of its sub-events, for the same reason explained in event merging part. However, similar to the outcome of the event merging process, we can say a event is fair if we can ensure that one of its sub-events is fair.
+\begin{center} 
+WF(i) $\lor$ WF(j) $\Implies$  WF(h)\\
+SF(i) $\lor$ SF(j) $\Implies$  SF(h)
+\end{center}
+Where event i and j are sub-events of event h.\\\\
+Currently Event-B does not have suppport for LTL, most of properties described by LTL (including fairness) can't be assumed or proved by Event-B. In the rest parts of this report, we will extend the original Event-B method and show the usage of fairness assumptions in proving response, a basic property of unbounded nondeterminism.\\
+
+
+ 	$\sideset{_1^2}{_3^4}\prod_a^b$
+ 	$\bigvee_{i=_1}^n E_i$
