@@ -2,11 +2,11 @@
 \contentsline {section}{\numberline {0.2}Introduction}{3}
 \contentsline {section}{\numberline {0.3}Background}{4}
 \contentsline {subsection}{\numberline {0.3.1}Event-B}{4}
-\contentsline {subsection}{\numberline {0.3.2}Temporal Logic}{4}
+\contentsline {subsection}{\numberline {0.3.2}Temporal Logic}{5}
 \contentsline {section}{\numberline {0.4}Fairness-for-Event-B}{6}
 \contentsline {subsection}{\numberline {0.4.1}Introduction}{6}
 \contentsline {paragraph}{Weak Fairness}{6}
 \contentsline {paragraph}{Strong Fairness}{6}
 \contentsline {paragraph}{Event Merging}{6}
-\contentsline {paragraph}{Event Splitting}{7}
-\contentsline {chapter}{Bibliography}{9}
+\contentsline {paragraph}{Event Splitting}{8}
+\contentsline {chapter}{Bibliography}{10}
