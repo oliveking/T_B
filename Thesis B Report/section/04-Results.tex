@@ -1,0 +1,43 @@
+
+\section{Sample proofs for response properties}
+\label{sec:results}
+\subsection{Proof  1}
+In this subsection, we want to prove $\RESP{n=1}{{n}=3}$ for Machine M0 below.\\
+\input{section/Graph_M0}\\
+For machine M0, we know that:
+\begin{gather*}
+J = (n\in\mathbb{N})\\ 
+I_1 = \{inc,dec\}\\
+g_{inc} = \{n | n < 1\}, a_{inc} = (n' = n + 5), \mathrm{Only}({inc}) = \{n | n < 1\}\\
+g_{dec} = \{n | n > 0\}, a_{dec} = (n' = n - 1), \mathrm{Only}({dec}) = \{n | n > 0\}\\
+thm_{InfExe} : (n < 1\Or{n} > 0) 
+\end{gather*} 
+\paragraph{Infinite execution proof for M0}
+Since ${J}\Equiv(n\in\mathbb{N})\Implies(n < 1\Or{n} > 0)\Equiv{thm_{InfExe}}$, $\mathrm{M0}$ have infinite execution.
+\paragraph{Response proof for M0}
+For proving $\RESP{n = 1}{n = 0}$ we have:
+\begin{gather*}
+   p = (n = 1), q = (n = 0)\\   
+   (n = 1)\in\mathrm{Only}({dec})\Equiv\mathrm{Only_{dec}}(n = 1)
+\end{gather*}
+By applying to rule \texttt{$\mathrm{RESP_{ONLY}}$}, we have:
+\begin{gather*}
+  \mathrm{Only}_{dec}({n = 1})\\
+  \frac{{J}\And{g_{dec}}\And{(n = 1)}\And{a_{dec}} = (n' = 0)}{\RESP{n = 1}{n = 0}}
+\end{gather*}
+Similarly, we can prove ${\RESP{n = 5}{n = 4}}$ and ${\RESP{n = 4}{n = 3}}$.\\
+For proving $\RESP{n = 0}{n = 5}$ we have:
+\begin{gather*}
+   p = (n = 0), q = (n = 5)\\   
+   (n = 0)\in\mathrm{Only}({inc})\Equiv\mathrm{Only_{inc}}(n = 0)
+\end{gather*}
+By applying to rule \texttt{$\mathrm{RESP_{ONLY}}$}, we have:
+\begin{gather*}
+  \mathrm{Only}_{inc}({n = 0})\\
+  \frac{{J}\And{g_{inc}}\And{(n = 0)}\And{a_{inc}} = (n' = 5)}{\RESP{n = 0}{n = 5}}
+\end{gather*}
+Since we proved ${\RESP{n = 1}{n = 0}}$, ${\RESP{n = 0}{n = 5}}$, ${\RESP{n = 5}{n = 4}}$ and ${\RESP{n = 4}{n = 3}}$, by applying to the transitivity of response, we get $\RESP{n=1}{{n}=3}$.
+Testing citations~\cite{Engelhardt2013, MannaPnueli1991:szym,
+  HoangAbrial:ICFEM2011, MannaPnueli92, MannaPnueli:REX1988}.
+
+\input{sample/M0}

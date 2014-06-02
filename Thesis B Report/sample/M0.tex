@@ -1,0 +1,48 @@
+
+\thispagestyle{empty}
+\begin{description}
+\MACHINE{M0}
+\VARIABLES
+	\begin{description}
+		\Item{ n }
+	\end{description}
+\INVARIANTS
+	\begin{description}
+		\nItem{ inv1 }{ n \in  \nat }
+		\nItem{ {\it thm\_InfExe} }{ n <  1 \lor  n >  0 }
+	\end{description}
+\EVENTS
+	\INITIALISATION
+		\begin{description}
+		\BeginAct
+			\begin{description}
+			\nItem{ act1 }{ n :=  0 }
+			\end{description}
+		\EndAct
+		\end{description}
+	\EVT {inc}
+		\begin{description}
+		\WhenGrd
+			\begin{description}
+			\nItem{ grd1 }{ n <  1 }
+			\end{description}
+		\ThenAct
+			\begin{description}
+			\nItem{ act1 }{ n :=  n + 5 }
+			\end{description}
+		\EndAct
+		\end{description}
+	\EVT {dec}
+		\begin{description}
+		\WhenGrd
+			\begin{description}
+			\nItem{ grd1 }{ n >  0 }
+			\end{description}
+		\ThenAct
+			\begin{description}
+			\nItem{ act1 }{ n :=  n -  1 }
+			\end{description}
+		\EndAct
+		\end{description}
+\END
+\end{description}

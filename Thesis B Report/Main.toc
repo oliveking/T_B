@@ -9,4 +9,16 @@
 \contentsline {paragraph}{Strong Fairness}{6}
 \contentsline {paragraph}{Event Merging}{6}
 \contentsline {paragraph}{Event Splitting}{8}
-\contentsline {chapter}{Bibliography}{10}
+\contentsline {subsection}{\numberline {0.4.2}The Extended Event-B method}{9}
+\contentsline {paragraph}{Infinite execution}{9}
+\contentsline {paragraph}{Assumptions}{9}
+\contentsline {subsection}{\numberline {0.4.3}Proving rules for response properties in Extended Event-B}{10}
+\contentsline {paragraph}{Proof rule for the only events}{10}
+\contentsline {paragraph}{Proof rule for the weakly fair events}{11}
+\contentsline {paragraph}{Proof rule for the strongly fair events}{12}
+\contentsline {paragraph}{The Well-Founded rule}{12}
+\contentsline {section}{\numberline {0.5}Sample proofs for response properties}{15}
+\contentsline {subsection}{\numberline {0.5.1}Proof 1}{15}
+\contentsline {paragraph}{Infinite execution proof for M0}{15}
+\contentsline {paragraph}{Response proof for M0}{15}
+\contentsline {chapter}{Bibliography}{18}
